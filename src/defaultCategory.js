@@ -9,5 +9,11 @@ module.exports = {
     name: 'Burgers, Sandwiches, & Wraps',
     image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/burger.png?raw=true',
     desc: 'Delicious, freshly prepared with all the juicy, satisfying taste you crave. From our Big Mac® and tasty Cheeseburgers to our new Signature McWrap®, McDonald’s® brings hearty flavour.',
+  },
+
+  salad: {
+    name: 'Salad',
+    image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/salad.png?raw=true',
+    desc: 'Made with quality ingredients, these are salads like you’ve never seen from McDonald’s. Each one is topped with your choice of grilled or crispy 100% seasoned chicken breast and served with your favourite Salad Dressing.',
   }
 };

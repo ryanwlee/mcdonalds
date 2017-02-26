@@ -42,6 +42,11 @@ class App extends React.Component {
           menu: burger
         });
         break;
+      case 'salad':
+        this.setState({
+          menuInfo: index,
+          menu: salad
+        })
       default:
         this.setState({
           menuInfo: index,
