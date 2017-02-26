@@ -25,9 +25,11 @@
 }
 .menu {
   height:80%;
+  overflow: scroll;
 }
 .cart {
   height:20%;
+  overflow: scroll;
 }
 .logo {
   height:20%;
@@ -48,4 +50,12 @@
 .category h3 {
   margin-top:0;
   margin-bottom:30px;
+}
+.item {
+  width:25%;
+  display:inline-block;
+  vertical-align: top;
+}
+.item img {
+  width:100%;
 }

@@ -5,7 +5,7 @@ class Category extends React.Component {
       const { details, index } = this.props;
       return (
         <div className="category">
-          <img src={details.image} onClick={() => console.log("click")} />
+          <img src={details.image} onClick={() => this.props.menuSelect(index)} alt={details.name} />
           <h3 className="category-name">
             {details.name}
           </h3>

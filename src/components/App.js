@@ -4,20 +4,27 @@ import Menu from './Menu';
 import Cart from './Cart';
 import Category from './Category';
 import defaultCategory from '../defaultCategory';
+import mccafe from '../mccafe';
 
 class App extends React.Component {
   constructor() {
     super();
+    this.menuSelect = this.menuSelect.bind(this);
     this.state = {
-      category: {}
+      category: {},
+      menu: {}
     }
   }
 
   componentWillMount() {
     this.setState({
-      category: defaultCategory
+      category: defaultCategory,
+      menu: mccafe
     });
-    console.log("test");
+  }
+
+  menuSelect(index) {
+    console.log(index);
   }
 
   render () {
@@ -30,12 +37,18 @@ class App extends React.Component {
               {
                 Object
                   .keys(this.state.category)
-                  .map(key => <Category key={key} index={key} details={this.state.category[key]} />)
+                  .map(key => <Category key={key} index={key} details={this.state.category[key]} menuSelect={this.menuSelect}/>)
               }
             </div>
           </div>
           <div className="rest-screen">
-            <Menu />
+            <div className="menu">
+              {
+                Object
+                  .keys(this.state.menu)
+                  .map(key => <Menu key={key} index={key} details={this.state.menu[key]}/>)
+              }
+            </div>
             <Cart />
           </div>
         </div>
