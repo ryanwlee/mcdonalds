@@ -3,8 +3,12 @@ import Header from './Header';
 import Menu from './Menu';
 import Cart from './Cart';
 import Category from './Category';
+import MenuHeader from './MenuHeader';
+
+//import data
 import defaultCategory from '../defaultCategory';
 import mccafe from '../mccafe';
+import burger from '../burger';
 
 class App extends React.Component {
   constructor() {
@@ -19,12 +23,32 @@ class App extends React.Component {
   componentWillMount() {
     this.setState({
       category: defaultCategory,
+      menuInfo: 'mccafe',
       menu: mccafe
     });
   }
 
   menuSelect(index) {
-    console.log(index);
+    switch (index) {
+      case 'mccafe':
+        this.setState({
+          menuInfo: index,
+          menu: mccafe
+        });
+        break;
+      case 'burger':
+        this.setState({
+          menuInfo: index,
+          menu: burger
+        });
+        break;
+      default:
+        this.setState({
+          menuInfo: index,
+          menu: mccafe
+        });
+        break;
+    }
   }
 
   render () {
@@ -43,6 +67,7 @@ class App extends React.Component {
           </div>
           <div className="rest-screen">
             <div className="menu">
+              <MenuHeader name={this.state.category} index={this.state.menuInfo} />
               {
                 Object
                   .keys(this.state.menu)

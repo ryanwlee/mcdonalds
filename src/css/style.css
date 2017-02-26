@@ -17,6 +17,8 @@
   width:20%;
   height:100%;
   margin:0;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
 .rest-screen {
   width:80%;
@@ -55,7 +57,15 @@
   width:25%;
   display:inline-block;
   vertical-align: top;
+  text-align: center;
 }
 .item img {
-  width:100%;
+  width:60%;
+}
+.item h4 {
+  font-size: 1em;
+}
+.menuheader {
+  margin-left: 20px;
+  margin-top: 25px;
 }
