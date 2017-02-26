@@ -9,6 +9,11 @@ import MenuHeader from './MenuHeader';
 import defaultCategory from '../defaultCategory';
 import mccafe from '../mccafe';
 import burger from '../burger';
+import salad from '../salad';
+import snack from '../snack';
+import beverage from '../beverage';
+import dessert from '../dessert';
+
 
 class App extends React.Component {
   constructor() {
@@ -47,6 +52,19 @@ class App extends React.Component {
           menuInfo: index,
           menu: salad
         })
+        break;
+      case 'snack':
+        this.setState({
+          menuInfo: index,
+          menu: snack
+        })
+        break;
+      case 'beverage':
+        this.setState({
+          menuInfo: index,
+          menu: beverage
+        })
+          break;
       default:
         this.setState({
           menuInfo: index,
