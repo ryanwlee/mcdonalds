@@ -7,21 +7,20 @@ import MenuHeader from './MenuHeader';
 
 //import data
 import defaultCategory from '../defaultCategory';
-import mccafe from '../mccafe';
-import burger from '../burger';
-import salad from '../salad';
-import snack from '../snack';
-import beverage from '../beverage';
-import dessert from '../dessert';
-
+import defaultMenu from '../defaultMenu';
 
 class App extends React.Component {
   constructor() {
     super();
     this.menuSelect = this.menuSelect.bind(this);
+    this.AddToCart = this.AddToCart.bind(this);
+    this.RemoveToCart = this.RemoveToCart.bind(this);
+
     this.state = {
       category: {},
-      menu: {}
+      menu: {},
+      menuInfo: '',
+      order: {}
     }
   }
 
@@ -29,49 +28,25 @@ class App extends React.Component {
     this.setState({
       category: defaultCategory,
       menuInfo: 'mccafe',
-      menu: mccafe
+      menu: defaultMenu
     });
   }
 
   menuSelect(index) {
-    switch (index) {
-      case 'mccafe':
-        this.setState({
-          menuInfo: index,
-          menu: mccafe
-        });
-        break;
-      case 'burger':
-        this.setState({
-          menuInfo: index,
-          menu: burger
-        });
-        break;
-      case 'salad':
-        this.setState({
-          menuInfo: index,
-          menu: salad
-        })
-        break;
-      case 'snack':
-        this.setState({
-          menuInfo: index,
-          menu: snack
-        })
-        break;
-      case 'beverage':
-        this.setState({
-          menuInfo: index,
-          menu: beverage
-        })
-          break;
-      default:
-        this.setState({
-          menuInfo: index,
-          menu: mccafe
-        });
-        break;
-    }
+    this.setState({ menuInfo: index });
+  }
+
+  AddToCart(index) {
+    const order = {...this.state.order};
+    order[index] = order[index] + 1 || 1;
+    this.setState({order});
+  }
+
+  RemoveToCart(index) {
+    const order = {...this.state.order};
+    if (order[index] === 1) { delete order[index]; }
+    else { order[index] = order[index] - 1; }
+    this.setState({ order });
   }
 
   render () {
@@ -94,10 +69,10 @@ class App extends React.Component {
               {
                 Object
                   .keys(this.state.menu)
-                  .map(key => <Menu key={key} index={key} details={this.state.menu[key]}/>)
+                  .map(key => <Menu key={key} index={key} details={this.state.menu[key]} menuInfo={this.state.menuInfo} AddToCart={this.AddToCart}/>)
               }
             </div>
-            <Cart />
+            <Cart menu={this.state.menu} order={this.state.order} RemoveToCart={this.RemoveToCart} />
           </div>
         </div>
       </div>

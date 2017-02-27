@@ -25,13 +25,13 @@ module.exports = {
 
   beverage: {
     name: 'Beverages',
-    image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/snack.png?raw=true',
+    image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/beverage.png?raw=true',
     desc: 'Refresh your taste buds with just the right drink. From ice-cold Diet Coke® and orange juice* to freshly brewed Premium Roast Coffee, we’ve got the ideal choice for your favourite menu items.',
   },
 
   dessert: {
     name: 'Desserts & Shakes',
-    image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/snack.png?raw=true',
+    image: 'https://github.com/dmrg2/mcdonalds/blob/master/src/css/images/dessert.png?raw=true',
     desc: 'Drop by for a delectable dessert or a simple boost of sweetness. Choose from our delicious McFlurry®, sundaes, cones, cool Triple Thick Milkshakes®, tasty, baked pies and much more.',
   }
 };

@@ -4,8 +4,8 @@ class Category extends React.Component {
   render () {
       const { details, index } = this.props;
       return (
-        <div className="category">
-          <img src={details.image} onClick={() => this.props.menuSelect(index)} alt={details.name} />
+        <div className="category" onClick={() => this.props.menuSelect(index)}>
+          <img src={details.image} alt={details.name} />
           <h3 className="category-name">
             {details.name}
           </h3>
